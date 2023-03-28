@@ -3,9 +3,9 @@
 # User-specific files
 Api/appsettings.json
 Api/appsettings.*.json
-Api/obj
-Api/bin
-Api/Migrations
+Api/obj/
+Api/bin/
+Api/Migrations/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
