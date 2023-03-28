@@ -41,34 +41,48 @@ namespace Api.src.Repositories.BaseRepo
             }
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(QueryOptions options)
+    public async Task<IEnumerable<T>> GetAllAsync(QueryOptions options)
+{
+    var query = _context.Set<T>().AsNoTracking();
+
+    if (!string.IsNullOrEmpty(options.Sort))
+    {
+        var property = typeof(T).GetProperty(options.Sort, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+
+        if (property != null)
         {
-            var query = _context.Set<T>().AsNoTracking();
-            if (options.Sort.Trim().Length > 0)
+            if (options.SortBy == SortBy.ASC)
             {
-                if (query.GetType().GetProperty(options.Sort) != null) //confirm if the "Sort" is a property of current entity or not
-                {
-                    query.OrderBy(e => e.GetType().GetProperty(options.Sort));
-                } // check out this one to dynamically  sort data
-                query.Take(options.Limit).Skip(options.Skip);
+                query = query.OrderBy(x => property.GetValue(x, null));
             }
-            return await query.ToArrayAsync();
+            else
+            {
+                query = query.OrderByDescending(x => property.GetValue(x, null));
+            }
+        }
+    }
+
+    query = query.Skip(options.Skip).Take(options.Limit);
+
+    return await query.ToListAsync(); 
+}
+
+    public async Task<T?> GetByIdAsync(string id)
+        { 
+            return await _context.Set<T>().FindAsync(id); 
         }
 
-        public async Task<T?> GetByIdAsync(string id)
-        {
-            /* findasync: return 1 entity -> find from cache -> find from db. Only work with primary property
-            where + ToListAsync() : return an Ienumerable
-            firstordefaultasync:  return 1 entity -> find in db -> input condition*/
-            return await _context.Set<T>().FindAsync(id);
-        }
+      public async Task<T> UpdateOneAsync(string id, T update)
+{
+    var entity = await _context.Set<T>().FindAsync(id);
 
-        public async Task<T> UpdateOneAsync(string id, T update)
-        {
-            /* _context.Entry(update).State = EntityState.Modified; */
-            var entity = update;
-            await _context.SaveChangesAsync();
-            return entity;
-        }
+    if (entity != null)
+    {
+        _context.Entry(entity).CurrentValues.SetValues(update);
+        await _context.SaveChangesAsync();
+    }
+
+    return entity;
+}
     }
 }
