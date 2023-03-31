@@ -24,20 +24,20 @@ namespace Api.src.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-           
+
             options.UseNpgsql(_config.GetConnectionString("DefaultConnection"));
         }
-         
-       protected override void OnModelCreating(ModelBuilder builder)
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.HasPostgresEnum<Role>(); // will create a enum type called "role" inside database
             builder.Entity<User>(entity =>
-            {  
+            {
                 entity.Property(e => e.Role).HasColumnType("role");
                 entity.HasIndex(e => e.Email).IsUnique();
             }); // connect property "Role" to enum type "role"
             builder.Entity<ProductOrder>(entity =>
-            { 
+            {
                 entity
                     .HasOne(e => e.Product)
                     .WithMany()
@@ -48,8 +48,9 @@ namespace Api.src.Database
                     .WithMany()
                     .HasForeignKey(e => e.OrderId)
                     .OnDelete(DeleteBehavior.Cascade);
-            }); }
+            });
+        }
 
-       
+
     }
 }

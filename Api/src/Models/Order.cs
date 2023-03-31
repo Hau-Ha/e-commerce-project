@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Api.src.Models
 {
-    public class Order: BaseModel
+    public class Order : BaseModel
     {
         public Guid UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }
