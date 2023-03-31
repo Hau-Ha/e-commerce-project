@@ -9,10 +9,11 @@ namespace Api.src.Models
         public string Email { get; set; }
         public Role Role { get; set; }
         public string Password { get; set; }
-       // public byte[] Salt { get; set; }
+        // public byte[] Salt { get; set; }
     }
 
-    public enum Role {
+    public enum Role
+    {
         Admin,
         Customer
     }

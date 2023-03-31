@@ -11,16 +11,18 @@ namespace Api.src.Repositories.UserRepo
 {
     public class UserRepo : BaseRepo<User>, IUserRepo
     {
-         private readonly DatabaseContext _context;
+        private readonly DatabaseContext _context;
 
         public UserRepo(DatabaseContext context) : base(context)
         {
             _context = context;
         }
 
-       public async Task<int> GetTotal()
-{
-    return await _context.Users.CountAsync();
-}
+        public async Task<int> GetTotal()
+        {
+            return await _context.Users.CountAsync();
+        }
+
+        
     }
 }

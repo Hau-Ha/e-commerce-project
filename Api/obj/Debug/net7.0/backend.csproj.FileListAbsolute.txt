@@ -60,3 +60,4 @@
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.pdb
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.genruntimeconfig.cache
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/ref/backend.dll
+/Users/s2300097/fs13-FullStack/Api/bin/Debug/net7.0/project.json
