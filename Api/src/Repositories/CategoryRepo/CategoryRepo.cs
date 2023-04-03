@@ -8,10 +8,8 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.ProductRepo
 {
-public class CategoryRepo : BaseRepo<Category>, ICategoryRepo
-{
-    public CategoryRepo(DatabaseContext context) : base(context)
+    public class CategoryRepo : BaseRepo<Category>, ICategoryRepo
     {
+        public CategoryRepo(DatabaseContext context) : base(context) { }
     }
-}
 }

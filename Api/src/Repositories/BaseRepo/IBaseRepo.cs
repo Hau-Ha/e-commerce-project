@@ -13,9 +13,8 @@ namespace Api.src.Repositories.BaseRepo
         Task<T?> GetByIdAsync(string id);
         Task<T> UpdateOneAsync(string id, T update);
         Task<bool> DeleteOneAsync(string id);
-        Task<T?> CreateOneAsync (T create);
+        Task<T?> CreateOneAsync(T create);
     }
-
     public class QueryOptions
     {
         public string Sort { get; set; } = string.Empty;
@@ -24,7 +23,6 @@ namespace Api.src.Repositories.BaseRepo
         public int Limit { get; set; } = 30;
         public int Skip { get; set; } = 0;
     }
-
     public enum SortBy
     {
         ASC,

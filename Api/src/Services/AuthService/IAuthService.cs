@@ -8,6 +8,6 @@ namespace Api.src.Services.AuthService
 {
     public interface IAuthService
     {
-        Task<string> LogInAsync (AuthDto auth);
+        Task<string> LogInAsync(AuthDto auth);
     }
 }

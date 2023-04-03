@@ -16,22 +16,20 @@ namespace Api.src.Services.AuthService
     {
         private readonly IAuthRepo _repo;
         private readonly IConfiguration _config;
-
-        public AuthService(IAuthRepo repo, IConfiguration config) {
+        public AuthService(IAuthRepo repo, IConfiguration config)
+        {
             _repo = repo;
             _config = config;
         }
-
         public async Task<string> LogInAsync(AuthDto auth)
         {
             var user = await _repo.LogInAsync(auth);
-            if(user is null)
+            if (user is null)
             {
                 throw ServiceException.Unauthorized("Credentials are wrong");
             }
             return CreateToken(user);
         }
-
         private string CreateToken(User user)
         {
             var claims = new List<Claim>
@@ -44,7 +42,8 @@ namespace Api.src.Services.AuthService
             var tokenHander = new JwtSecurityTokenHandler();
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secrete!));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var tokenDescriptor = new SecurityTokenDescriptor {
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
                 Subject = new ClaimsIdentity(claims),
                 SigningCredentials = credentials,
                 Expires = DateTime.Now.AddDays(7)

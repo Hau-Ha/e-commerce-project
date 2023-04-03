@@ -13,7 +13,6 @@ namespace Api.src.Repositories.AuthRepo
         {
             _context = context;
         }
-
         public async Task<User?> LogInAsync(AuthDto auth)
         {
             var user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Email.Equals(auth.Email));

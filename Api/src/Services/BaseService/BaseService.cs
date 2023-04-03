@@ -13,7 +13,6 @@ namespace Api.src.Services.BaseService
     {
         protected readonly IMapper _mapper;
         protected readonly IBaseRepo<T> _repo;
-
         public BaseService(IMapper mapper, IBaseRepo<T> repo)
         {
             _mapper = mapper;
@@ -38,20 +37,17 @@ namespace Api.src.Services.BaseService
             }
             return _mapper.Map<T, TReadDto>(result);
         }
-
         public async Task<bool> DeleteOneAsync(string id)
         {
             var result = await _repo.DeleteOneAsync(id);
             if (!result) throw ServiceException.NotFound();
             return result;
         }
-
         public async Task<IEnumerable<TReadDto>> GetAllAsync(QueryOptions options)
         {
             var data = await _repo.GetAllAsync(options);
             return _mapper.Map<IEnumerable<T>, IEnumerable<TReadDto>>(data);
         }
-
         public async Task<TReadDto?> GetByIdAsync(string id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -61,7 +57,6 @@ namespace Api.src.Services.BaseService
             }
             return _mapper.Map<T, TReadDto>(entity);
         }
-
         public async Task<TReadDto> UpdateOneAsync(string id, TUpdateDto update)
         {
             var entity = await _repo.GetByIdAsync(id);
