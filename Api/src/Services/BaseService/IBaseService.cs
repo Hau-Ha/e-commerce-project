@@ -6,13 +6,12 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Services.BaseService
 {
-
     public interface IBaseService<T, TReadDto, TCreateDto, TUpdateDto>
     {
         Task<IEnumerable<TReadDto>> GetAllAsync(QueryOptions options);
         Task<TReadDto?> GetByIdAsync(string id);
         Task<TReadDto> UpdateOneAsync(string id, TUpdateDto update);
         Task<bool> DeleteOneAsync(string id);
-        Task<TReadDto> CreateOneAsync (TCreateDto create);
+        Task<TReadDto> CreateOneAsync(TCreateDto create);
     }
 }

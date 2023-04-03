@@ -8,8 +8,5 @@ using Api.src.Services.BaseService;
 
 namespace Api.src.Services.UserService
 {
-    public interface IUserService : IBaseService<User, UserReadDto, UserCreateDto, UserUpdateDto>
-    {
-        
-    }
+    public interface IUserService : IBaseService<User, UserReadDto, UserCreateDto, UserUpdateDto> { }
 }

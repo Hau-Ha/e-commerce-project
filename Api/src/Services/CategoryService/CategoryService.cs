@@ -11,10 +11,8 @@ using AutoMapper;
 
 namespace Api.src.Services.ProductService
 {
-   public class CategoryService : BaseService<Category, CategoryReadDTO, CategoryCreateDTO, CategoryUpdateDTO>, ICategoryService
-{
-    public CategoryService(IMapper mapper, ICategoryRepo repo) : base(mapper, repo)
+    public class CategoryService : BaseService<Category, CategoryReadDTO, CategoryCreateDTO, CategoryUpdateDTO>, ICategoryService
     {
+        public CategoryService(IMapper mapper, ICategoryRepo repo) : base(mapper, repo) { }
     }
-}
 }

@@ -11,7 +11,7 @@ namespace Api.src.Models
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public decimal Price { get; set; }
-        public Guid CategoryId { get; set; } 
+        public Guid CategoryId { get; set; }
         public Category Category { get; set; } = null!;
 
         [Column(TypeName = "jsonb")]

@@ -9,6 +9,6 @@ namespace Api.src.Repositories.UserRepo
 {
     public interface IUserRepo : IBaseRepo<User>
     {
-        Task<int> GetTotal ();
+        Task<int> GetTotal();
     }
 }

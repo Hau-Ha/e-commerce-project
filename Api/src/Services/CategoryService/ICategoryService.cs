@@ -5,7 +5,5 @@ using Api.src.Services.BaseService;
 
 namespace Api.src.Services.ProductService
 {
-  public interface ICategoryService : IBaseService<Category, CategoryReadDTO, CategoryCreateDTO, CategoryUpdateDTO>
-{
-}
+    public interface ICategoryService : IBaseService<Category, CategoryReadDTO, CategoryCreateDTO, CategoryUpdateDTO> { }
 }

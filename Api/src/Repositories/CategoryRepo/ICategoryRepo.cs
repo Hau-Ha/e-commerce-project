@@ -7,8 +7,5 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.ProductRepo
 {
-   public interface ICategoryRepo : IBaseRepo<Category>
-{
- 
-}
+    public interface ICategoryRepo : IBaseRepo<Category> { }
 }

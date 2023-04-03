@@ -11,7 +11,7 @@ namespace Api.src.Middlewares
         public LoggerMiddleware(ILogger<LoggerMiddleware> logger)
         {
             _logger = logger;
-            
+
         }
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {

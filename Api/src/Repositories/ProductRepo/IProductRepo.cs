@@ -7,8 +7,8 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.ProductRepo
 {
-public interface IProductRepo : IBaseRepo<Product>
-{
-    Task<IEnumerable<Product>> GetAllByCategoryIdAsync(Guid categoryId,QueryOptions options);
-}
+    public interface IProductRepo : IBaseRepo<Product>
+    {
+        Task<IEnumerable<Product>> GetAllByCategoryIdAsync(Guid categoryId, QueryOptions options);
+    }
 }

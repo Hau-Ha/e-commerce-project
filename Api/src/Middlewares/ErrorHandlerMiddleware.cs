@@ -17,22 +17,25 @@ namespace Api.src.Middlewares
             }
             catch (ServiceException e)
             {
-                await context.Response.WriteAsJsonAsync(new {
-                    StatusCode= e.StatusCode,
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    StatusCode = e.StatusCode,
                     Message = e.Message
                 });
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException e)
             {
-                await context.Response.WriteAsJsonAsync(new {
-                    StatusCode= 500,
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    StatusCode = 500,
                     Message = e.InnerException!.Message
                 });
             }
             catch (Exception e)
             {
-                await context.Response.WriteAsJsonAsync(new {
-                    StatusCode= 500,
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    StatusCode = 500,
                     Message = e.Message
                 });
             }
