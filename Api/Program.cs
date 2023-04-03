@@ -19,13 +19,12 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-/*         builder.WebHost.UseKestrel(options =>
+      builder.WebHost.UseKestrel(options =>
         {
             options.ListenLocalhost(5000); //http: no data encription
             options.ListenLocalhost(5001, options => options.UseHttps()); // https: with encription
-        }); */
-
-        builder.Services.Configure<RouteOptions>(options =>
+        }); 
+               builder.Services.Configure<RouteOptions>(options =>
         {
             options.LowercaseUrls = true;
         });

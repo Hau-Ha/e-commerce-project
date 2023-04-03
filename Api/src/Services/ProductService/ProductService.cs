@@ -19,10 +19,12 @@ namespace Api.src.Services.ProductService
            
         }
 
-        public async Task<IEnumerable<ProductReadDto>> GetProductsByCategoryIdAsync(Guid categoryId)
+        public async Task<IEnumerable<ProductReadDto>> GetProductsByCategoryIdAsync(Guid categoryId , QueryOptions options )
         {
-           var products = await _repo.GetAllAsync();
+           var products = await _repo.GetAllAsync( options );
             return _mapper.Map<IEnumerable<ProductReadDto>>(products.Where(p => p.CategoryId == categoryId));
         }
+
+
     }
 }

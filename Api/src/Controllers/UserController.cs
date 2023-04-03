@@ -29,6 +29,7 @@ namespace Api.src.Controllers
         {
             return Ok(await _service.DeleteOneAsync(id));
         }
+
         [HttpPut("{id}")]
         public override async Task<ActionResult<UserReadDto>> UpdateOne(string id, UserUpdateDto update)
         {
@@ -40,16 +41,13 @@ namespace Api.src.Controllers
             return Forbid();
         }
 
-
-
-        /*         [HttpGet("profile")]
-               public async Task<ActionResult<UserReadDto>> GetProfile()
-               {
-                   var authenticatedUser = HttpContext.User;
-                   var id = authenticatedUser.FindFirstValue(ClaimTypes.NameIdentifier);
-                   var user = _service.GetByIdAsync(id!);
-                   return Ok(user);
-               }*/
-
+        [HttpGet("profile")]
+        public async Task<ActionResult<UserReadDto>> GetProfile()
+        {
+            var authenticatedUser = HttpContext.User;
+            var id = authenticatedUser.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _service.GetByIdAsync(id!);
+            return Ok(user);
+        }
     }
 }

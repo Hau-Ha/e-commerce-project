@@ -14,6 +14,6 @@ namespace Api.src.Repositories.AuthRepo
 {
     public interface IAuthRepo
     {
-        Task<User?> LogInAsync (AuthDto auth);
+             Task<User?> LogInAsync (AuthDto auth);
     }
 }
