@@ -7,7 +7,7 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.UserRepo
 {
-    public interface IUserRepo : IBaseRepo<User> 
+    public interface IUserRepo : IBaseRepo<User>
     {
         Task<int> GetTotal ();
     }

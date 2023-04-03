@@ -2,13 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.src.Database;
 using Api.src.Models;
 using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.ProductRepo
 {
-public interface IProductRepo : IBaseRepo<Product>
+public class CategoryRepo : BaseRepo<Category>, ICategoryRepo
 {
-    Task<IEnumerable<Product>> GetAllByCategoryIdAsync(Guid categoryId,QueryOptions options);
+    public CategoryRepo(DatabaseContext context) : base(context)
+    {
+    }
 }
 }
