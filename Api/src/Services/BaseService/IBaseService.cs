@@ -6,7 +6,7 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Services.BaseService
 {
-    /* data in databse might not look same as data in response */
+
     public interface IBaseService<T, TReadDto, TCreateDto, TUpdateDto>
     {
         Task<IEnumerable<TReadDto>> GetAllAsync(QueryOptions options);

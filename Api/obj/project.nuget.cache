@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o+6hoefykyueoSFhxYMtE7bo1W5cRCsQ/MqFPcOSfspXU5Wiuyr2kHCnZByH8sXTlSQL/8v76O3ZMjdh0rBoAQ==",
+  "dgSpecHash": "coToYTNWENmJT8I7RuSayCFyVQHA1DEhSaF6amOiPLWa4qd7SsEgikyBaPD01XIgo5ePUr3MX+d3z2BehGbZWg==",
   "success": true,
   "projectFilePath": "/Users/s2300097/fs13-FullStack/Api/backend.csproj",
   "expectedPackageFiles": [
@@ -49,5 +49,16 @@
     "/Users/s2300097/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/s2300097/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "backend depends on Npgsql.EntityFrameworkCore.PostgreSQL (>= 7.0.2) but Npgsql.EntityFrameworkCore.PostgreSQL 7.0.2 was not found. An approximate best match of Npgsql.EntityFrameworkCore.PostgreSQL 7.0.3 was resolved.",
+      "libraryId": "Npgsql.EntityFrameworkCore.PostgreSQL",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

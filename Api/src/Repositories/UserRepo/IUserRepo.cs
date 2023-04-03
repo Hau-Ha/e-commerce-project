@@ -7,15 +7,8 @@ using Api.src.Repositories.BaseRepo;
 
 namespace Api.src.Repositories.UserRepo
 {
-    public interface IUserRepo : IBaseRepo<User> 
+    public interface IUserRepo : IBaseRepo<User>
     {
         Task<int> GetTotal ();
-        // GetOrder
-        // if Admin can see all of order
-
-        // update order take care 
-
-
-
     }
 }

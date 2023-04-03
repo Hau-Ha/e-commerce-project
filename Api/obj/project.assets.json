@@ -2025,7 +2025,7 @@
       "Microsoft.AspNetCore.OpenApi >= 7.0.1",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.3",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.2",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Filters >= 7.0.6"
     ]
@@ -2100,7 +2100,7 @@
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
-            "version": "[7.0.3, )"
+            "version": "[7.0.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -2133,5 +2133,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "backend depends on Npgsql.EntityFrameworkCore.PostgreSQL (>= 7.0.2) but Npgsql.EntityFrameworkCore.PostgreSQL 7.0.2 was not found. An approximate best match of Npgsql.EntityFrameworkCore.PostgreSQL 7.0.3 was resolved.",
+      "libraryId": "Npgsql.EntityFrameworkCore.PostgreSQL",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

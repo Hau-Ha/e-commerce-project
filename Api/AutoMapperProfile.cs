@@ -11,11 +11,17 @@ namespace Api
     public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
-        {   
+        {
+            /* CreateMap<TCreateDto, T>(); */
             CreateMap<User, UserReadDto>();
             CreateMap<UserUpdateDto, User>();
             CreateMap<UserCreateDto, User>();
+            CreateMap<Product, ProductReadDto>();
+            CreateMap<ProductCreateDto, Product>();
+            CreateMap<ProductUpdateDto, Product>();
+            CreateMap<Category, CategoryReadDTO>();
+            CreateMap<CategoryCreateDTO, Category>();
+            CreateMap<CategoryUpdateDTO, Category>();
         }
-        
     }
 }

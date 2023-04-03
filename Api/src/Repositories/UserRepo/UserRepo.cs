@@ -10,8 +10,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Api.src.Repositories.UserRepo
 {
     public class UserRepo : BaseRepo<User>, IUserRepo
+
     {
-        private readonly DatabaseContext _context;
+        private new readonly DatabaseContext _context;
 
         public UserRepo(DatabaseContext context) : base(context)
         {
@@ -20,9 +21,7 @@ namespace Api.src.Repositories.UserRepo
 
         public async Task<int> GetTotal()
         {
-            return await _context.Users.CountAsync();
+           return await _context.Users.CountAsync();
         }
-
-        
     }
 }

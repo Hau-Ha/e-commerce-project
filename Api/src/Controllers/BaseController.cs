@@ -37,5 +37,17 @@ namespace Api.src.Controllers
             var result = await _service.CreateOneAsync(create);
             return Ok(result);
         }
+
+        [HttpDelete("{id}")]
+        public virtual async Task<ActionResult<bool>> DeleteOne(string id)
+        {
+            return Ok(await _service.DeleteOneAsync(id));
+        }
+
+        [HttpPut("{id}")]
+        public virtual async Task<ActionResult<TReadDto>> UpdateOne(string id, TUpdateDto update)
+        {
+            return Ok(await _service.UpdateOneAsync(id, update));
+        }
     }
 }

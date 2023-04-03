@@ -39,9 +39,11 @@ namespace Api.src.Services.BaseService
             return _mapper.Map<T, TReadDto>(result);
         }
 
-        public Task<bool> DeleteOneAsync(string id)
+        public async Task<bool> DeleteOneAsync(string id)
         {
-            throw new NotImplementedException();
+            var result = await _repo.DeleteOneAsync(id);
+            if (!result) throw ServiceException.NotFound();
+            return result;
         }
 
         public async Task<IEnumerable<TReadDto>> GetAllAsync(QueryOptions options)

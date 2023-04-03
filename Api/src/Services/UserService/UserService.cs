@@ -18,16 +18,35 @@ namespace Api.src.Services.UserService
         public UserService(IMapper mapper, IUserRepo repo)
             : base(mapper, repo) { }
 
-        public override async Task<UserReadDto> CreateOneAsync(UserCreateDto create)
+          public override async Task<UserReadDto> CreateOneAsync(UserCreateDto dto)
+    {
+        ServiceHash.CreateHashData(dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
+        var entity = _mapper.Map<UserCreateDto, User>(dto);
+        entity.Password = Convert.ToBase64String(passwordHash);
+        entity.Salt = passwordSalt;
+        await _repo.CreateOneAsync(entity);
+        return _mapper.Map<User, UserReadDto>(entity);
+    }
+
+        public class ServiceHash
         {
-            var entity = _mapper.Map<UserCreateDto, User>(create);
-            /*  hash the password before saving into databse */
-            var result = await _repo.CreateOneAsync(entity);
-            if (result is null)
+            public static void CreateHashData(string input, out byte[] inputHash, out byte[] inputSalt)
             {
-                throw new Exception("Cannot create");
+                using (var hmac = new System.Security.Cryptography.HMACSHA512())
+                {
+                    inputSalt = hmac.Key;
+                    inputHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+                }
             }
-            return _mapper.Map<User, UserReadDto>(result);
+
+            public static bool CompareHashData(string input, byte[] inputHash, byte[] inputSalt)
+            {
+                using (var hmac = new System.Security.Cryptography.HMACSHA512(inputSalt))
+                {
+                    var computedInput = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+                    return computedInput.SequenceEqual(inputHash);
+                }
+            }
         }
     }
 }

@@ -19,10 +19,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-   <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />y
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.6" />
-   
   </ItemGroup>
 
 </Project>

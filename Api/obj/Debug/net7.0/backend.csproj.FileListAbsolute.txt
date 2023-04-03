@@ -46,6 +46,13 @@
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.csproj.CoreCompileInputs.cache
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.MvcApplicationPartsAssemblyInfo.cs
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.MvcApplicationPartsAssemblyInfo.cache
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.csproj.CopyComplete
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.dll
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/refint/backend.dll
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.pdb
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.genruntimeconfig.cache
+/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/ref/backend.dll
+/Users/s2300097/fs13-FullStack/Api/bin/Debug/net7.0/project.json
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/staticwebassets/msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/staticwebassets/msbuild.build.backend.props
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.backend.props
@@ -54,10 +61,3 @@
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/staticwebassets.build.json
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/staticwebassets.development.json
 /Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/scopedcss/bundle/backend.styles.css
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.csproj.CopyComplete
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.dll
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/refint/backend.dll
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.pdb
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/backend.genruntimeconfig.cache
-/Users/s2300097/fs13-FullStack/Api/obj/Debug/net7.0/ref/backend.dll
-/Users/s2300097/fs13-FullStack/Api/bin/Debug/net7.0/project.json
